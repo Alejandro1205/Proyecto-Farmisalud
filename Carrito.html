@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - FarmiSalud</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="Encabezado">
+        <div class="barra-navegacion">
+            <div class="Titulo-Pagina">FARMISALUD</div>
+            <button class="menu-hamburguesa" id="menu-hamburguesa" aria-label="Abrir menú" aria-expanded="false">
+                <div></div> <div></div> <div></div>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="/Index.html">Inicio</a></li>
+                    <li><a href="/Enlaces/Productos.html">Productos</a></li>
+                    <li><a href="/Enlaces/Servicios.html">Servicios</a></li>
+                    <li><a href="/Enlaces/Contacto.html">Contacto</a></li>
+                    <li><a href="/Enlaces/Carrito.html">Carrito (<span id="contador-carrito">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección del Carrito de Compras -->
+        <section id="carrito">
+            <div class="contenedor">
+                <h2>Tu Carrito de Compras</h2>
+
+                <div class="carrito-vacio" style="display: none; text-align: center;">
+                    <p>Tu carrito está vacío.</p>
+                    <a href="/Enlaces/Productos.html" class="boton">Ver Productos</a>
+                </div> 
+
+                <div class="contenido-carrito animar anim-subir">
+                    <table class="tabla-carrito">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Los productos del carrito se insertarán aquí con JavaScript -->
+                            
+                        </tbody>
+                    </table>
+
+                    <div class="resumen-carrito">
+                        <h3>Resumen del Pedido</h3>
+                        <div class="detalle-resumen">
+                            <span>Subtotal</span>
+                            <span id="subtotal-valor">$0</span>
+                        </div>
+                        <div class="detalle-resumen">
+                            <span>Envío</span>
+                            <span id="envio-valor">$8.000</span> <!-- Costo de envío fijo para Colombia -->
+                        </div>
+                        <div class="total-resumen">
+                            <span>Total</span>
+                            <span id="total-valor">$8.000</span>
+                        </div>
+                        <a href="#" class="boton">Proceder al Pago</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <div id="notificacion" aria-live="polite"></div>
+    <script src="/app.js"></script>
+
+</body>
+
+</html>

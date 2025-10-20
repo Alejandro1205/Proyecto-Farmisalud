@@ -1,0 +1,621 @@
+/* --- VARIABLES CSS (PALETA DE COLORES) --- */
+/* Centralizar los colores aquí hace que sea fácil cambiar el tema del sitio. */
+:root {
+  --color-primario: #1e3c72; /* Azul oscuro principal */
+  --color-secundario: #2874a7; /* Azul más claro para botones y acentos */
+  --color-acento: #6daef8; /* Azul claro para líneas y hovers */
+  --color-fondo: #f5f6fa; /* Gris muy claro para el fondo del body */
+  --color-texto-claro: #dcdde1; /* Texto para fondos oscuros */
+  --color-texto-oscuro: #333; /* Texto principal para fondos claros */
+  --color-blanco: #ffffff;
+  --color-exito: #28a745;
+  --color-error: #dc3545;
+  --sombra-suave: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --fuente-principal: "Inter", sans-serif;
+}
+
+/* --- ESTILOS GLOBALES Y RESETEO --- */
+
+html {
+  scroll-behavior: smooth; /* Habilita el desplazamiento suave para anclas */
+}
+
+h1 {
+  text-align: center; /* Esto centrar Titulo */
+  color: var(--color-blanco);
+}
+/* Reseteo básico para eliminar márgenes y paddings por defecto del navegador. */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Práctica estándar para un modelo de caja predecible. */
+}
+.Titulo-Pagina {
+  font-size: 2rem;
+  font-weight: 700; /* Grosor de la letra */
+  color: var(--color-blanco); /* Color del texto */
+  text-align: right; /* Alineación a la derecha */
+  display: inline-block; /* Necesario para usar ::after debajo del texto */
+  position: relative; /* Punto de referencia para ::after */
+  margin: 0;
+}
+
+.Titulo-Pagina::after {
+  content: ""; /* Crea un pseudo-elemento vacío (la línea) */
+  position: absolute; /* Posiciona la línea respecto al título */
+  width: 100%; /* Que la línea tenga el mismo ancho que el texto */
+  height: 3px; /* Grosor de la línea */
+  bottom: -5px; /* La coloca debajo del texto */
+  left: 0;
+  background: var(--color-acento); /* Color de la línea */
+  transform: scaleX(0); /* Oculta la línea (escala horizontal en 0) */
+  transition: transform 0.3s ease; /* Animación suave */
+  transform-origin: right; /* La animación empieza desde la derecha */
+}
+
+.Titulo-Pagina:hover::after {
+  transform: scaleX(1); /* Al pasar el mouse, la línea se expande */
+  transform-origin: left; /* Expande hacia la izquierda */
+}
+
+/* --- ENCABEZADO Y BARRA DE NAVEGACIÓN --- */
+
+.Encabezado {
+  background-color: var(--color-primario); /* Color del Encabezado*/
+  width: 100%;
+}
+
+.barra-navegacion ul {
+  /*Cambio de lista vertical a horizontal*/
+  list-style: none; /* Quitar viñetas - Asegurando que se eliminen completamente */
+  display: flex; /* Poner <li> en fila */
+  gap: 20px; /* Espacio entre enlaces */
+}
+.barra-navegacion {
+  display: flex; /* Coloca h1 y ul en la misma fila */
+  justify-content: space-between; /* h1 a la izquierda, ul a la derecha */
+  align-items: center; /* Centrado vertical */
+  padding: 10px 20px;
+}
+.barra-navegacion a {
+  display: inline-block; /* Necesario para usar ::after debajo del texto */
+  position: relative; /* Punto de referencia para ::after */
+  /* Cambiamos estilo de los enlaces de la barra-navegacion*/
+  text-decoration: none; /* quita subrayado */
+  color: var(--color-texto-claro); /* texto gris oscuro */
+  font-weight: bold;
+  transition: color 0.3s, transform 0.3s; /* animación suave al cambiar de color */
+}
+
+.barra-navegacion a:hover {
+  color: var(--color-blanco); /* El texto se vuelve más brillante al pasar el ratón */
+  /* Se elimina el transform: scale(1.1) para evitar saltos en el layout. */
+}
+
+.barra-navegacion a::after {
+  content: ""; /* Crea un pseudo-elemento vacío (la línea) */
+  position: absolute; /* Posiciona la línea respecto al título */
+  width: 100%; /* Que la línea tenga el mismo ancho que el texto */
+  height: 3px; /* Grosor de la línea */
+  bottom: -5px; /* La coloca debajo del texto */
+  left: 0;
+  background: var(--color-acento); /* Color de la línea */
+  transform: scaleX(0); /* Oculta la línea (escala horizontal en 0) */
+  transition: transform 0.3s ease; /* Animación suave */
+  transform-origin: right; /* La animación empieza desde la derecha */
+}
+
+.barra-navegacion a:hover::after {
+  transform: scaleX(1); /* Al pasar el mouse, la línea se expande */
+  transform-origin: left; /* Expande hacia la izquierda */
+}
+
+/* --- ESTRUCTURA Y SECCIONES PRINCIPALES --- */
+/* Secciones generales: Padding común para todas las secciones de contenido. */
+section {
+  padding: 80px 0;
+} /* Padding vertical de 80px para espaciar secciones. */
+h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: var(--color-texto-oscuro);
+} /* Títulos de secciones: Centrados, margen inferior grande, tamaño grande, color gris oscuro. */
+
+body {
+  background-color: var(--color-fondo);
+  font-family: var(--fuente-principal);
+  -webkit-font-smoothing: antialiased; /* Mejora el renderizado de fuentes en Webkit (Chrome, Safari) */
+  -moz-osx-font-smoothing: grayscale; /* Mejora el renderizado de fuentes en Firefox */
+}
+
+/* Hero Section: Sección principal con imagen de fondo y texto centrado. */
+.seccion-hero {
+  background-color: var(--color-primario); /* Se elimina la imagen de fondo y se usa un color sólido */
+  color: var(--color-blanco);
+  padding: 100px 0;
+  text-align: center;
+}
+.seccion-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+} /* Título hero: Tamaño muy grande, margen inferior. */
+.seccion-hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+} /* Párrafo hero: Tamaño mediano, margen inferior, ancho máximo para centrarlo. */
+
+/* --- COMPONENTES REUTILIZABLES --- */
+
+/* Contenedor: Centra el contenido y le da un ancho máximo. */
+.contenedor {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Botones: Estilo base para todos los botones del sitio. */
+.boton {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+.boton:hover {
+  transform: translateY(-2px); /* Efecto sutil de elevación */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Tarjetas de Producto: Estructura y estilo para mostrar productos. */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+} /* Grid adaptable: Columnas automáticas que se ajustan (mínimo 300px cada una), gap de 2rem entre cards. */
+.tarjeta-producto {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--sombra-suave);
+  transition: transform 0.3s, box-shadow 0.3s;
+} /* Tarjeta de producto: Fondo blanco, bordes redondeados, overflow hidden para imágenes, sombra sutil, transición para escalado. */
+.tarjeta-producto:hover {
+  transform: translateY(-5px); /* Se eleva un poco */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12); /* La sombra se hace más pronunciada */
+} /* Hover: Efecto de elevación más moderno que el escalado. */
+.tarjeta-producto img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+} /* Imágenes en cards: Ancho completo, altura fija, object-fit cover para recortar sin distorsionar. */
+.cuerpo-tarjeta-producto {
+  padding: 1.5rem;
+} /* Cuerpo de la card: Padding interno para contenido. */
+.tarjeta-producto h5 {
+  margin-bottom: 0.5rem;
+} /* Título en card: Margen inferior pequeño. */
+.tarjeta-producto p.texto-precio {
+  color: var(--color-secundario);
+  font-weight: bold;
+  font-size: 1.2rem;
+} /* Precio: Clase para color verde, negrita, tamaño mediano. */
+.ver-todos {
+  display: block;
+  margin: 2rem auto 0;
+  width: fit-content;
+} /* Botón "Ver Todos": Bloque centrado, margen superior, ancho ajustado al contenido. */
+
+/* Bloques de Información: Usado en "Sobre Nosotros", "Servicios", etc. */
+.grid-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+} /* Grid adaptable: Columnas automáticas (mín 300px), gap de 2rem para espaciar bloques de info. */
+.bloque-info {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--sombra-suave);
+} /* Cada bloque de info: Fondo blanco, padding interno, bordes redondeados, sombra sutil para profundidad. */
+.bloque-info h3 {
+  color: var(--color-primario);
+  margin-bottom: 1rem;
+} /* Subtítulos en bloques: Color azul oscuro, margen inferior. */
+.bloque-info p {
+  margin-bottom: 1rem;
+} /* Párrafos en bloques: Margen inferior para separación. */
+.bloque-info ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+} /* Listas en bloques: Viñetas por defecto, padding izquierdo. */
+.bloque-info li {
+  margin-bottom: 0.5rem;
+} /* Items de lista: Margen inferior pequeño. */
+
+/* Formularios: Estilos para labels, inputs y textareas. */
+.grupo-formulario {
+  margin-bottom: 1.5rem;
+}
+.grupo-formulario label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.grupo-formulario input,
+.grupo-formulario textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.grupo-formulario input:focus,
+.grupo-formulario textarea:focus {
+  outline: none;
+  border-color: var(--color-secundario);
+  box-shadow: 0 0 0 3px rgba(40, 116, 167, 0.2);
+}
+
+/* Estilos para la validación de formularios */
+.grupo-formulario .error-mensaje {
+  color: var(--color-error);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: none; /* Oculto por defecto */
+}
+
+.grupo-formulario.error input,
+.grupo-formulario.error textarea {
+  border-color: var(--color-error);
+}
+
+
+/* --- PIE DE PÁGINA (FOOTER) --- */
+footer {
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
+  padding: 60px 0 20px 0;
+}
+/* Estilos específicos para los bloques de info dentro del footer */
+footer .bloque-info {
+  background: none; /* Sin fondo blanco */
+  box-shadow: none; /* Sin sombra */
+  padding: 0; /* Sin padding extra */
+  color: var(--color-texto-claro);
+}
+footer a {
+  color: var(--color-texto-claro);
+  text-decoration: none;
+}
+footer hr {
+  border-color: var(--color-acento);
+  margin: 20px 0;
+}
+.pie-pagina-abajo {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-acento);
+}
+
+.footer-sociales a {
+  margin: 0 10px;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.footer-sociales a:hover {
+  transform: scale(1.2);
+}
+
+/* --- PÁGINA DEL CARRITO --- */
+
+/* Contenedor principal del carrito que alinea la tabla y el resumen. */
+.contenido-carrito {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Tabla de productos en el carrito. */
+.tabla-carrito {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-carrito thead {
+  background-color: #e9ecef;
+}
+
+.tabla-carrito th,
+.tabla-carrito td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* Contenedor para la imagen y el nombre del producto en la tabla. */
+.info-producto-carrito {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.info-producto-carrito h5 { margin-bottom: 0; }
+.info-producto-carrito img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 1rem;
+  border-radius: 5px;
+}
+
+/* Input para cambiar la cantidad de un producto. */
+.tabla-carrito input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  text-align: center;
+}
+
+.boton-eliminar {
+  color: var(--color-error);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Resumen del pedido (subtotal, total, etc.). */
+.resumen-carrito {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--sombra-suave);
+}
+
+.resumen-carrito h3 {
+  margin-bottom: 1.5rem;
+}
+
+.detalle-resumen,
+.total-resumen {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.total-resumen {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+/* --- SECCIÓN DE TESTIMONIOS MEJORADA --- */
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonio-card {
+  background-color: var(--color-blanco);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--sombra-suave);
+  border-left: 5px solid var(--color-secundario);
+}
+.testimonio-card p {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.testimonio-card .testimonio-autor {
+  font-weight: bold;
+  font-style: normal;
+  color: var(--color-primario);
+}
+
+/* --- SECCIÓN DE MARCAS ALIADAS --- */
+.marcas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+.marca-logo {
+  text-align: center;
+}
+.marca-logo img {
+  max-width: 120px;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: filter 0.3s, opacity 0.3s;
+}
+.marca-logo img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* --- SECCIÓN DE CONSEJOS DE SALUD (BLOG) --- */
+.consejos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.tarjeta-consejo {
+  background: var(--color-blanco);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--sombra-suave);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.tarjeta-consejo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+.tarjeta-consejo img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* --- NOTIFICACIÓN "AÑADIDO AL CARRITO" --- */
+#notificacion {
+  position: fixed; /* Fijo en la pantalla */
+  bottom: 20px; /* A 20px del borde inferior */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translateX(-50%); /* Ajuste fino para centrarlo perfectamente */
+  background-color: var(--color-exito); /* Verde de éxito */
+  color: var(--color-blanco);
+  padding: 15px 30px;
+  border-radius: 50px;
+  box-shadow: var(--sombra-suave);
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  opacity: 0; /* Inicialmente invisible */
+  visibility: hidden; /* Inicialmente oculto */
+  transition: opacity 0.3s ease, visibility 0.3s ease, bottom 0.3s ease;
+}
+
+#notificacion.mostrar {
+  opacity: 1;
+  visibility: visible;
+  bottom: 40px; /* Se desliza hacia arriba al aparecer */
+}
+
+/* --- MENÚ HAMBURGUESA (MÓVIL) --- */
+.menu-hamburguesa {
+    display: none; /* Oculto en escritorio */
+    cursor: pointer;
+}
+
+.menu-hamburguesa div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-blanco);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* --- MEDIA QUERIES (DISEÑO RESPONSIVO) --- */
+
+/* Estilos para pantallas de 768px o menos (tabletas y móviles). */
+@media (max-width: 768px) {
+  /* --- Navegación Móvil --- */
+  .barra-navegacion {
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea */
+    justify-content: space-between;
+  }
+
+  .menu-hamburguesa {
+    display: block; /* Muestra el ícono de hamburguesa */
+  }
+
+  .barra-navegacion ul {
+    display: none; /* Oculta la lista de enlaces por defecto */
+    flex-direction: column;
+    width: 100%; /* Ocupa todo el ancho */
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  .barra-navegacion ul.activo {
+    display: flex; /* Muestra la lista cuando tiene la clase 'activo' */
+  }
+
+  /* --- Ajustes Generales para Móvil --- */
+
+  section {
+    padding: 40px 0;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .seccion-hero {
+    padding: 60px 0;
+  }
+
+  .seccion-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .grid-info,
+  .productos-grid {
+    grid-template-columns: 1fr; /* Una sola columna */
+  }
+
+  /* --- Carrito en Móvil --- */
+  .contenido-carrito {
+    grid-template-columns: 1fr; /* Apila la tabla y el resumen */
+  }
+
+  .tabla-carrito thead {
+    display: none; /* Oculta los encabezados de la tabla en móviles */
+  }
+
+  .tabla-carrito,
+  .tabla-carrito tbody,
+  .tabla-carrito tr,
+  .tabla-carrito td {
+    display: block; /* Convierte la tabla en bloques */
+    width: 100%;
+  }
+
+  .tabla-carrito tr {
+    margin-bottom: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+  }
+
+  .tabla-carrito td {
+    text-align: right; /* Alinea el contenido a la derecha */
+    padding-left: 50%; /* Deja espacio para la etiqueta */
+    position: relative;
+    border-bottom: none;
+  }
+
+  /* Simula los encabezados de la tabla usando pseudo-elementos ::before */
+  .tabla-carrito td::before {
+    content: attr(data-label); /* Usa el atributo data-label como etiqueta */
+    position: absolute;
+    left: 1rem;
+    width: calc(50% - 2rem);
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .info-producto-carrito {
+    flex-direction: column;
+    justify-content: flex-end; /* Alinea el contenido del producto a la derecha */
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+
+  .info-producto-carrito img { display: none; } /* Oculta la imagen en la tabla móvil para ahorrar espacio */
+}
+
+/* --- ANIMACIONES DE ENTRADA AL HACER SCROLL --- */
+
+/* Prepara los elementos para ser animados (los oculta y desplaza). */
+.animar {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, filter 0.6s ease-out;
+}
+
+.anim-subir {
+  transform: translateY(40px);
+}
+
+/* Clase que se añade con JS cuando el elemento es visible en pantalla. */
+.animar.visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}

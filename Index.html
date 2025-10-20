@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- La etiqueta <head> contiene metadatos importantes para el navegador y los motores de búsqueda. -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmiSalud - Inicio</title>
+    <link rel="stylesheet" href="/style.css"> <!-- Asegúrate de actualizar style.css también -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<!-- El <body> contiene todo el contenido visible de la página. -->
+<body>
+    <!-- HEADER: Contiene el logo/título y la navegación principal. -->
+    <header class="Encabezado">
+        <div class="barra-navegacion">
+            <div class="Titulo-Pagina">FARMISALUD</div>
+            <!-- Menú de Hamburguesa para vista móvil -->
+            <button class="menu-hamburguesa" id="menu-hamburguesa" aria-label="Abrir menú" aria-expanded="false">
+                <div></div> <div></div> <div></div>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="/Index.html">Inicio</a></li>
+                    <li><a href="/Enlaces/Productos.html">Productos</a></li>
+                    <li><a href="/Enlaces/Servicios.html">Servicios</a></li>
+                    <li><a href="/Enlaces/Contacto.html">Contacto</a></li>
+                    <li><a href="/Enlaces/Carrito.html">Carrito (<span id="contador-carrito">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN: Contenedor principal para el contenido único de la página. -->
+    <main>
+        <!-- Sección "Hero": Es la primera gran sección visual que el usuario ve. -->
+        <section class="seccion-hero">
+            <div class="contenedor">
+                <h1>Medicamentos y Bienestar a Tu Puerta</h1>
+                <p>En FarmiSalud, nos dedicamos a ofrecer soluciones de salud accesibles y de calidad. Explora nuestra
+                    amplia gama de productos farmacéuticos, suplementos y cuidado personal, con envíos rápidos y seguros en
+                    todo el país. ¡Cuida tu salud desde la comodidad de tu hogar!</p>
+                <a href="#productos" class="boton">Explorar Productos Ahora</a>
+            </div>
+        </section>
+
+        <!-- Sección "Sobre Nosotros": Presenta la misión y visión de la empresa. -->
+        <section id="sobre-nosotros">
+            <div class="contenedor">
+                <h2>Sobre FarmiSalud</h2>
+                <div class="grid-info stagger-container">
+                    <div class="bloque-info animar anim-subir">
+                        <h3>¿Quiénes Somos?</h3>
+                        <p>FarmiSalud es una farmacia digital líder fundada en 2020, especializada en ventas online de
+                            medicamentos, suplementos y productos de cuidado personal. Nuestra misión es mejorar el acceso a
+                            la salud para todos, ofreciendo productos de alta calidad con un enfoque en la sostenibilidad y
+                            el bienestar integral.</p>
+                        <p>Con años de experiencia en el sector farmacéutico, nos enorgullecemos de partnerships con
+                            laboratorios certificados y un equipo de farmacéuticos expertos que garantizan la autenticidad y
+                            seguridad de cada producto.</p>
+                    </div>
+                    <div class="bloque-info animar anim-subir">
+                        <h3>Nuestra Visión y Valores</h3>
+                        <ul>
+                            <li><strong>Accesibilidad:</strong> Hacemos que la salud sea asequible para todos, con precios
+                                justos y envíos gratuitos en pedidos mayores a $50.</li>
+                            <li><strong>Innovación:</strong> Utilizamos tecnología para ofrecer consultas virtuales y
+                                recomendaciones personalizadas basadas en IA.</li>
+                            <li><strong>Confianza:</strong> Todos nuestros productos están respaldados por certificaciones
+                                sanitarias y garantías de devolución.</li>
+                            <li><strong>Comunidad:</strong> Apoyamos iniciativas locales de salud, como campañas de
+                                vacunación y educación sobre bienestar.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Servicios: Destaca los servicios clave ofrecidos. -->
+        <section id="servicios">
+            <div class="contenedor">
+                <h2>Nuestros Servicios</h2>
+                <div class="grid-info stagger-container">
+                    <div class="bloque-info animar anim-subir">
+                        <h3>Consultas Farmacéuticas Gratuitas</h3>
+                        <p>Ofrecemos sesiones de chat o video con farmacéuticos certificados para asesorarte sobre
+                            medicamentos y tratamientos. Disponible 24/7 para emergencias.</p>
+                    </div>
+                    <div class="bloque-info animar anim-subir ">
+                        <h3>Envíos Rápidos y Seguros</h3>
+                        <p>Colaboramos con empresas de logística para entregas en 24-48 horas en todo el país. Incluimos
+                            empaques especiales para productos sensibles como vacunas y refrigerados.</p>
+                    </div>
+                    <div class="bloque-info animar anim-subir ">
+                        <h3>Programas de Suscripción</h3>
+                        <p>Suscríbete a tus suplementos favoritos y recibe entregas automáticas con descuentos exclusivos.
+                            Ideal para vitaminas diarias o tratamientos crónicos.</p>
+                    </div>
+                    <div class="bloque-info animar anim-subir ">
+                        <h3>Educación y Recursos</h3>
+                        <p>Accede a guías gratuitas, webinars y artículos sobre salud mental, nutrición y prevención de
+                            enfermedades. ¡Empieza a aprender hoy!</p>
+                    </div>
+                </div>
+                <a href="/Enlaces/Servicios.html" class="boton ver-todos">Más sobre Servicios</a>
+            </div>
+        </section>
+
+        <!-- Sección de Productos: Muestra una selección de productos populares. -->
+        <section id="productos">
+            <div class="contenedor">
+                <h2>Productos Destacados</h2>
+                <div class="productos-grid stagger-container">
+                    <article class="tarjeta-producto animar anim-subir " data-id="col-001">
+                        <img src="https://www.dolex.com.co/static/f0a3189f0330391f47b55732ba790f28/dolex-forte-nf-producto.png"
+                            alt="Dolex Forte">
+                        <div class="cuerpo-tarjeta-producto">
+                            <h5>Dolex Forte NF</h5>
+                            <p>Alivio del dolor fuerte y la fiebre. Caja x 24 tabletas.</p>
+                            <p class="texto-precio">$18.500</p>
+                            <a href="#" class="boton btn-agregar-carrito">Añadir al Carrito</a>
+                        </div>
+                    </article>
+                    <article class="tarjeta-producto animar anim-subir " data-id="col-002">
+                        <img src="https://www.noraver.com/static/f4a85b92a35c5929d249821e252443c7/7702132002782-1_1.png"
+                            alt="Noraver Gripa">
+                        <div class="cuerpo-tarjeta-producto">
+                            <h5>Noraver Gripa</h5>
+                            <p>Tratamiento sintomático del resfriado común. Caja x 12 cápsulas.</p>
+                            <p class="texto-precio">$15.200</p>
+                            <a href="#" class="boton btn-agregar-carrito">Añadir al Carrito</a>
+                        </div>
+                    </article>
+                    <article class="tarjeta-producto animar anim-subir " data-id="col-003">
+                        <img src="https://www.advil.com.co/static/a1005697a31811ea3a60391284d16b3f/7702132001969-1_1.png"
+                            alt="Advil Max">
+                        <div class="cuerpo-tarjeta-producto">
+                            <h5>Advil Max</h5>
+                            <p>Analgésico y antiinflamatorio de acción rápida. Caja x 10 cápsulas.</p>
+                            <p class="texto-precio">$16.800</p>
+                            <a href="#" class="boton btn-agregar-carrito">Añadir al Carrito</a>
+                        </div>
+                    </article>
+                    <article class="tarjeta-producto animar anim-subir " data-id="col-004">
+                        <img src="https://www.lasante.com.co/wp-content/uploads/2022/09/Vitamina-C-1g-La-Sante-Caja-x-10-Tabletas-Efervescentes-con-sabor-a-Naranja-y-sin-azucar-2.jpg" alt="Vitamina C">
+                        <div class="cuerpo-tarjeta-producto">
+                            <h5>Vitamina C Efervescente</h5>
+                            <p>Fortalece el sistema inmune. Tubo x 10 tabletas.</p>
+                            <p class="texto-precio">$12.000</p>
+                            <a href="#" class="boton btn-agregar-carrito">Añadir al Carrito</a>
+                        </div>
+                    </article>
+                </div>
+                <a href="/Enlaces/Productos.html" class="boton ver-todos">Ver Todos los Productos</a>
+            </div>
+        </section>
+
+        <!-- Sección de Marcas Aliadas -->
+        <section id="marcas-aliadas" style="background-color: var(--color-blanco);">
+            <div class="contenedor">
+                <h2>Nuestros Aliados</h2>
+                <div class="marcas-grid stagger-container">
+                    <div class="marca-logo animar anim-subir">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Bayer_logo.svg/1200px-Bayer_logo.svg.png" alt="Logo Bayer">
+                    </div>
+                    <div class="marca-logo animar anim-subir">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Genfar_logo.svg/2560px-Genfar_logo.svg.png" alt="Logo Genfar">
+                    </div>
+                    <div class="marca-logo animar anim-subir">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/La_Sant%C3%A9_logo.svg/2560px-La_Sant%C3%A9_logo.svg.png" alt="Logo La Santé">
+                    </div>
+                    <div class="marca-logo animar anim-subir">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/GSK_logo_2014.svg/2560px-GSK_logo_2014.svg.png" alt="Logo GSK">
+                    </div>
+                    <div class="marca-logo animar anim-subir">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Pfizer_logo.svg/1200px-Pfizer_logo.svg.png" alt="Logo Pfizer">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Consejos de Salud -->
+        <section id="consejos-salud">
+            <div class="contenedor">
+                <h2>Consejos para tu Bienestar</h2>
+                <div class="consejos-grid stagger-container">
+                    <article class="tarjeta-consejo animar anim-subir">
+                        <img src="https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Doctor explicando a paciente">
+                        <div class="cuerpo-tarjeta-producto">
+                            <h5>5 Mitos sobre los Antibióticos</h5>
+                            <p>Descubre la verdad detrás de los mitos más comunes y aprende a usar los antibióticos de forma responsable para cuidar tu salud y la de todos.</p>
+                            <a href="#" class="boton">Leer Más</a>
+                        </div>
+                    </article>
+                    <article class="tarjeta-consejo animar anim-subir">
+                        <img src="https://images.pexels.com/photos/1128678/pexels-photo-1128678.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Frutas y verduras frescas">
+                        <div class="cuerpo-tarjeta-producto">
+                            <h5>Nutrición para un Sistema Inmune Fuerte</h5>
+                            <p>Conoce los alimentos y vitaminas clave que pueden ayudarte a fortalecer tus defensas naturales, especialmente en temporadas de frío.</p>
+                            <a href="#" class="boton">Leer Más</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto Rápido: Un formulario simple para consultas rápidas. -->
+        <section id="contacto-rapido">
+            <div class="contenedor">
+                <h2>Contacto Rápido</h2>
+                <form action="#" method="post" novalidate class="animar anim-subir ">
+                    <div class="grupo-formulario">
+                        <label for="nombre-rapido">Nombre:</label>
+                        <input type="text" id="nombre-rapido" name="nombre" required>
+                        <div class="error-mensaje"></div>
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="email-rapido">Email:</label>
+                        <input type="email" id="email-rapido" name="email" required>
+                        <div class="error-mensaje"></div>
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="mensaje-rapido">Mensaje:</label>
+                        <textarea id="mensaje-rapido" name="mensaje" rows="4" required></textarea>
+                        <div class="error-mensaje"></div>
+                    </div>
+                    <button type="submit" class="boton">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER: Contiene enlaces útiles, información de contacto y el copyright. -->
+    <footer>
+        <div class="contenedor">
+            <div class="grid-info">
+                <div class="bloque-info animar anim-subir">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul>
+                        <li><a href="/Index.html">Inicio</a></li>
+                        <li><a href="/Enlaces/Productos.html">Productos</a></li>
+                        <li><a href="/Enlaces/Servicios.html">Servicios</a></li>
+                        <li><a href="/Enlaces/Contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="bloque-info animar anim-subir">
+                    <h5>Contáctanos</h5>
+                    <p>Email: info@farmisalud.com</p>
+                    <p>Teléfono: +57 123 4567</p>
+                </div>
+                <div class="bloque-info animar anim-subir">
+                    <h5>Síguenos</h5>
+                    <div class="footer-sociales">
+                        <a href="#" aria-label="Facebook"><img src="https://img.icons8.com/ios-filled/30/ffffff/facebook-new.png" alt="Facebook"></a>
+                        <a href="#" aria-label="Instagram"><img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram"></a>
+                        <a href="#" aria-label="Twitter"><img src="https://img.icons8.com/ios-filled/30/ffffff/twitter.png" alt="Twitter"></a>
+                    </div>
+                </div>
+            </div>
+            <p class="pie-pagina-abajo">© 2025 FarmiSalud. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Elemento para la notificación. aria-live="polite" anuncia los cambios a los lectores de pantalla. -->
+    <div id="notificacion" aria-live="polite"></div>
+
+    <!-- El script de JavaScript se enlaza al final del body para asegurar que el DOM esté cargado antes de que se ejecute. -->
+    <script src="/app.js"></script>
+
+</body>
+</html>
