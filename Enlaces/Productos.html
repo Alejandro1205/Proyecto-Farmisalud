@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - FarmiSalud</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="Encabezado">
+        <div class="barra-navegacion">
+            <div class="Titulo-Pagina">FARMISALUD</div>
+            <button class="menu-hamburguesa" id="menu-hamburguesa" aria-label="Abrir menú" aria-expanded="false">
+                <div></div> <div></div> <div></div>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="/Index.html">Inicio</a></li>
+                    <li><a href="/Enlaces/Productos.html">Productos</a></li>
+                    <li><a href="/Enlaces/Servicios.html">Servicios</a></li>
+                    <li><a href="/Enlaces/Contacto.html">Contacto</a></li>
+                    <li><a href="/Enlaces/Carrito.html">Carrito (<span id="contador-carrito">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección de Productos -->
+        <section id="productos">
+            <div class="contenedor">
+                <h2>Nuestro Catálogo de Productos</h2>
+                <div class="productos-grid stagger-container">
+                    <!-- Fila 1 -->
+                    <article class="tarjeta-producto animar anim-subir" data-id="col-001">
+                        <img src="https://www.dolex.com.co/static/f0a3189f0330391f47b55732ba790f28/dolex-forte-nf-producto.png" alt="Dolex Forte">
+                        <div class="cuerpo-tarjeta-producto">
+                            <h5>Dolex Forte NF</h5>
+                            <p>Alivio del dolor fuerte y la fiebre. Caja x 24 tabletas.</p>
+                            <p class="texto-precio">$18.500</p>
+                            <a href="#" class="boton btn-agregar-carrito">Añadir al Carrito</a>
+                        </div>
+                    </article>
+                    <article class="tarjeta-producto animar anim-subir" data-id="col-002">
+                        <img src="https://www.noraver.com/static/f4a85b92a35c5929d249821e252443c7/7702132002782-1_1.png" alt="Noraver Gripa">
+                        <div class="cuerpo-tarjeta-producto">
+                            <h5>Noraver Gripa</h5>
+                            <p>Tratamiento sintomático del resfriado común. Caja x 12 cápsulas.</p>
+                            <p class="texto-precio">$15.200</p>
+                            <a href="#" class="boton btn-agregar-carrito">Añadir al Carrito</a>
+                        </div>
+                    </article>
+                    <article class="tarjeta-producto animar anim-subir" data-id="col-003">
+                        <img src="https://www.advil.com.co/static/a1005697a31811ea3a60391284d16b3f/7702132001969-1_1.png" alt="Advil Max">
+                        <div class="cuerpo-tarjeta-producto">
+                            <h5>Advil Max</h5>
+                            <p>Analgésico y antiinflamatorio de acción rápida. Caja x 10 cápsulas.</p>
+                            <p class="texto-precio">$16.800</p>
+                            <a href="#" class="boton btn-agregar-carrito">Añadir al Carrito</a>
+                        </div>
+                    </article>
+                    <article class="tarjeta-producto animar anim-subir" data-id="col-004">
+                        <img src="https://www.lasante.com.co/wp-content/uploads/2022/09/Vitamina-C-1g-La-Sante-Caja-x-10-Tabletas-Efervescentes-con-sabor-a-Naranja-y-sin-azucar-2.jpg" alt="Vitamina C">
+                        <div class="cuerpo-tarjeta-producto">
+                            <h5>Vitamina C Efervescente</h5>
+                            <p>Fortalece el sistema inmune. Tubo x 10 tabletas.</p>
+                            <p class="texto-precio">$12.000</p>
+                            <a href="#" class="boton btn-agregar-carrito">Añadir al Carrito</a>
+                        </div>
+                    </article>
+                    <!-- Fila 2 -->
+                    <article class="tarjeta-producto animar anim-subir" data-id="col-005">
+                        <img src="https://www.farmalisto.com.co/86278-large_default/comprar-lomotil-caja-con-8-tabletas-precio-7501109902334.jpg" alt="Lomotil">
+                        <div class="cuerpo-tarjeta-producto">
+                            <h5>Lomotil</h5>
+                            <p>Antidiarreico. Controla la diarrea ocasional. Caja x 8 tabletas.</p>
+                            <p class="texto-precio">$9.500</p>
+                            <a href="#" class="boton btn-agregar-carrito">Añadir al Carrito</a>
+                        </div>
+                    </article>
+                    <article class="tarjeta-producto animar anim-subir" data-id="col-006">
+                        <img src="https://www.alkaseltzer.com.co/static/e883c02506b3281b373884815041539b/bayer-alka-seltzer-extreme-producto.png" alt="Alka-Seltzer">
+                        <div class="cuerpo-tarjeta-producto">
+                            <h5>Alka-Seltzer Extreme</h5>
+                            <p>Alivio de la acidez estomacal y el dolor de cabeza. Caja x 12 tabletas.</p>
+                            <p class="texto-precio">$14.300</p>
+                            <a href="#" class="boton btn-agregar-carrito">Añadir al Carrito</a>
+                        </div>
+                    </article>
+                    <article class="tarjeta-producto animar anim-subir" data-id="col-007">
+                        <img src="https://www.centrum.com.co/static/a2e3793234e945fb9f228182743819e0/centrum-adulto-producto.png" alt="Centrum Adultos">
+                        <div class="cuerpo-tarjeta-producto">
+                            <h5>Centrum Adultos</h5>
+                            <p>Multivitamínico completo para el bienestar diario. Frasco x 100 tabletas.</p>
+                            <p class="texto-precio">$65.900</p>
+                            <a href="#" class="boton btn-agregar-carrito">Añadir al Carrito</a>
+                        </div>
+                    </article>
+                    <article class="tarjeta-producto animar anim-subir" data-id="col-008">
+                        <img src="https://www.suerox.com.co/media/1039/fresa-kiwi.png" alt="Suerox">
+                        <div class="cuerpo-tarjeta-producto">
+                            <h5>Suerox Fresa-Kiwi</h5>
+                            <p>Bebida hidratante con 8 iones, sin azúcar. Botella 630 ml.</p>
+                            <p class="texto-precio">$6.200</p>
+                            <a href="#" class="boton btn-agregar-carrito">Añadir al Carrito</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contenedor">
+            <div class="grid-info">
+                <div class="bloque-info animar anim-subir">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul>
+                        <li><a href="/Index.html">Inicio</a></li>
+                        <li><a href="/Enlaces/Productos.html">Productos</a></li>
+                        <li><a href="/Enlaces/Servicios.html">Servicios</a></li>
+                        <li><a href="/Enlaces/Contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="bloque-info animar anim-subir">
+                    <h5>Contáctanos</h5>
+                    <p>Email: info@farmisalud.com</p>
+                    <p>Teléfono: +57 123 4567</p>
+                </div>
+                <div class="bloque-info animar anim-subir">
+                    <h5>Síguenos</h5>
+                    <div class="footer-sociales">
+                        <a href="#" aria-label="Facebook"><img src="https://img.icons8.com/ios-filled/30/ffffff/facebook-new.png" alt="Facebook"></a>
+                        <a href="#" aria-label="Instagram"><img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram"></a>
+                        <a href="#" aria-label="Twitter"><img src="https://img.icons8.com/ios-filled/30/ffffff/twitter.png" alt="Twitter"></a>
+                    </div>
+                </div>
+            </div>
+            <p class="pie-pagina-abajo">© 2025 FarmiSalud. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="notificacion" aria-live="polite"></div>
+
+    <script src="/app.js"></script>
+
+</body>
+
+</html>
